@@ -23,14 +23,16 @@ if(isset($_POST["login"])){
     $password = mysqli_real_escape_string($conn,md5($_POST["psw"]));
     $role = mysqli_real_escape_string($conn,$_POST["role"]);
 
-    $check_username = mysqli_num_rows(mysqli_query($conn,"SELECT role FROM users where username='$username' AND password='$password'"));
+    $check_username = mysqli_query($conn,"SELECT agency FROM users where username='$username' AND password='$password'");
 
-    if($check_username > 0){
+    if(mysqli_num_rows($check_username) > 0){
+        $row = mysqli_fetch_assoc($check_username);
         $_SESSION["user_role"] = $role;
         if($role == 'client'){
             header("Location: clientmenu.php");
         }
         else{
+            $_SESSION["agency_name"] = $row['agency'];
             header("Location: agentmenu.php");
         }
     }else{

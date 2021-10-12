@@ -23,6 +23,7 @@ if(isset($_POST["signup"])){
     $password = mysqli_real_escape_string($conn,md5($_POST["psw"]));
     $role = mysqli_real_escape_string($conn,$_POST["role"]);
     $agency= mysqli_real_escape_string($conn,$_POST["agencyname"]);
+    $phone= mysqli_real_escape_string($conn,$_POST["pnumber"]);
 
     $check_username = mysqli_num_rows(mysqli_query($conn,"SELECT username FROM users where username='$username'"));
 
@@ -33,7 +34,7 @@ if(isset($_POST["signup"])){
         </script>";
     }
     else{
-        $sql = "INSERT INTO users(username, password, role, agency) VALUES('$username', '$password', '$role', '$agency')";
+        $sql = "INSERT INTO users(username, password, role, agency, phone) VALUES('$username', '$password', '$role', '$agency', '$phone')";
         $result = mysqli_query($conn,$sql);
         if($result){
             $_SESSION["user_role"] = $role;
@@ -41,6 +42,7 @@ if(isset($_POST["signup"])){
                 header("Location: clientmenu.php");
             }
             else{
+                $_SESSION["agency_name"] = $agency;
                 header("Location: agentmenu.php");
             }
         }else{

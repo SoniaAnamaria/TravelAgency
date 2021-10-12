@@ -25,7 +25,7 @@ if(isset($_SESSION['user_role'])){
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="../php/register.php" method="post">
+  <form class="modal-content animate" action="register.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
@@ -47,6 +47,9 @@ if(isset($_SESSION['user_role'])){
 
       <label for="agencyname"><b>Agency name(if you are a travel agent)</b></label>
       <input type="text" placeholder="Enter Agency name" name="agencyname" id="agencyname" autocomplete="off">
+
+      <label for="agencyname"><b>Phone number(if you are a travel agent)</b></label>
+      <input type="text" placeholder="Enter Phone number" name="pnumber" id="pnumber" autocomplete="off">
 
       <div class="clearfix">
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>

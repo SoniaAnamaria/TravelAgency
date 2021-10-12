@@ -1,0 +1,27 @@
+body{
+    background-color:rgb(101, 178, 194);
+}
+
+button {
+    background-color: rgb(196, 227, 233);
+    color: rgb(6, 90, 107);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: medium;
+}
+
+table{
+    width: 25%;
+}
+
+table.center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}

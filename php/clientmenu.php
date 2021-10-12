@@ -18,12 +18,20 @@ else{
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="../css/menu.css">
 </head>
 
 <body>
-    <p>I'm a client</p>
-    <button onclick="document.location='logout.php'">Logout</button> 
-
+    <table class="center">
+        <tr>
+            <td><button>Agency list</button></td>
+        </tr>
+        <tr>
+            <td><button>Booking list</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="document.location='logout.php'">Logout</button> </td>
+         </tr>
+    </table>
 </body>
 </html>
