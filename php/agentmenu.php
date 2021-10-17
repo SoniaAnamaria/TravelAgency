@@ -27,10 +27,10 @@ else{
             <td><button onclick="document.location='addoffer.php'">Add offer</button></td>
         </tr>
         <tr>
-            <td><button>Edit offer</button></td>
+            <td><button onclick="document.location='editoffer.php'">Edit offer</button></td>
         </tr>
         <tr>
-            <td><button>Delete offer</button></td>
+            <td><button onclick="document.location='deleteoffer.php'">Delete offer</button></td>
         </tr>
         <tr>
             <td><button onclick="document.location='logout.php'">Logout</button> </td>
