@@ -50,7 +50,7 @@ else{
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result))
                 echo "
-                    <li><a>".$row['name']."</a></li>
+                    <li><a href='deleteofferdetails.php?name=".$row['name']."'>".$row['name']."</a></li>
                 ";
         }
     ?>

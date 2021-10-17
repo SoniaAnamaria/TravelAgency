@@ -44,16 +44,16 @@ else{
 <input type="text" id="myInput" onkeyup="search()" placeholder="Search for offer">
 <ul id="myUL">
     <?php
-    $agencyname = $_SESSION["agency_name"];
-    $sql = "SELECT * FROM offers WHERE agency='$agencyname'";
-    $result = mysqli_query($conn,$sql);
-    if(mysqli_num_rows($result) > 0){
-        while($row = mysqli_fetch_assoc($result)){
-            echo "
-                <li><a href='editofferdetails.php?name=".$row['name']."'>".$row['name']."</a></li>
-            ";
-        }
-    } 
+        $agencyname = $_SESSION["agency_name"];
+        $sql = "SELECT * FROM offers WHERE agency='$agencyname'";
+        $result = mysqli_query($conn,$sql);
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                echo "
+                    <li><a href='editofferdetails.php?name=".$row['name']."'>".$row['name']."</a></li>
+                ";
+            }
+        } 
     ?>
 </ul>
 </div>
