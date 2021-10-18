@@ -24,7 +24,7 @@ else{
 <body>
     <table class="center">
         <tr>
-            <td><button>Agency list</button></td>
+            <td><button onclick="document.location='agencylist.php'">Agency list</button></td>
         </tr>
         <tr>
             <td><button>Booking list</button></td>
