@@ -41,7 +41,6 @@ else{
 </div>
 
 <div class="center">
-<input type="text" id="myInput" onkeyup="search()" placeholder="Search for offer">
 <ul id="myUL">
     <?php
         $queries = array();
@@ -52,7 +51,7 @@ else{
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result)){
                 echo "
-                    <li><a href='offerdetails.php?name=".$row['name']."'>".$row['name']."</a></li>
+                    <li><a>".$row['name']."</a></li>
                 ";
             }
         } 
