@@ -5,7 +5,7 @@ session_start();
 $hostname = "localhost";
 $username = "root";
 $password = "";
-$database = "registration";
+$database = "bookings";
 
 $conn = mysqli_connect($hostname,$username,$password,$database) or die("Database connection failed");
 
@@ -26,13 +26,13 @@ else{
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/editoffer.css">
+    <link rel="stylesheet" href="../css/bookinglist.css">
 </head>
 
 <body>
 
 <div class="topnav" id="myTopnav">
-  <a href="bookinglist.php">Booking list</a>
+  <a href="agencylist.php">Agency list</a>
   <a href="logout.php">Logout</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
@@ -40,25 +40,38 @@ else{
 </div>
 
 <div class="center">
-<input type="text" id="myInput" onkeyup="search()" placeholder="Search for agency">
-<ul id="myUL">
+<table id="myTable">
+<tr class="header">
+    <th>Agency</th>
+    <th>Offer</th>
+  </tr>
     <?php
-        $agencies = array();
-        $sql = "SELECT * FROM users WHERE role='agent'";
-        $result = mysqli_query($conn,$sql);
+        $username = $_SESSION["username"];
+        $sql = "SELECT * FROM bookings WHERE username='$username' ORDER BY id DESC";
+        $result = mysqli_query($conn ,$sql);
         if(mysqli_num_rows($result) > 0){
             while($row = mysqli_fetch_assoc($result))
-                array_push($agencies,$row['agency']);
-            foreach(array_unique($agencies) as $value)
                 echo "
-                    <li><a href='offerlist.php?name=".$value."'>".$value."</a></li>
+                    <tr>
+                        <td><a href='bookingdetails.php?id=".$row['id']."'>".$row['agency']."</a></td>
+                        <td><a href='bookingdetails.php?id=".$row['id']."'>".$row['offer']."</a></td>
+                    </tr>
                 ";
         }
     ?>
-</ul>
+</table>
 </div>
 
-<script src="../js/editoffer.js"></script>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
 
 </body>
 </html>

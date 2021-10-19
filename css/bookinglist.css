@@ -37,40 +37,43 @@ body {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    width: 30%;
+    width: 45%;
 }
 
-#myInput {
+#myTable {
+    border-collapse: collapse; 
     width: 100%; 
-    font-size: 16px; 
-    padding: 12px 15px 12px 10px; 
-    border: 1px solid #ddd;
-    margin-bottom: 12px; 
+    border: 1px solid  rgb(196, 201, 202); 
+    font-size: 18px; 
     background-color: rgb(243, 250, 250);
 }
   
-#myUL {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-  
-#myUL li a {
-    border: 1px solid #ddd; 
-    margin-top: -1px;
-    background-color: rgb(243, 250, 250);
+#myTable th, #myTable td {
+    text-align: left; 
     padding: 12px; 
-    text-decoration: none; 
-    font-size: 17px; 
-    color: rgb(2, 63, 75);
-    display: block; 
-    width: 100%;
-  }
+}
+
+#myTable th{
+    background-color: rgb(217, 224, 224);
+}
   
-#myUL li a:hover:not(.header) {
+#myTable tr {
+    border-bottom: 1px solid  rgb(216, 222, 223); 
+}
+
+#myTable tr:hover {
     background-color: rgb(221, 252, 252);
 }
 
+td a { 
+    display: block; 
+}
+
+td a:link,td a:visited {
+    color: rgb(2, 63, 75);
+    background-color: transparent;
+    text-decoration: none;
+}
 
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
@@ -92,4 +95,4 @@ body {
       display: block;
       text-align: left;
     }
- }
+}

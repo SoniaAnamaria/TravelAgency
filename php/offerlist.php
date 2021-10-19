@@ -33,7 +33,7 @@ else{
 
 <div class="topnav" id="myTopnav">
   <a href="agencylist.php">Agency list</a>
-  <a href="#">Booking list</a>
+  <a href="bookinglist.php">Booking list</a>
   <a href="logout.php">Logout</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
