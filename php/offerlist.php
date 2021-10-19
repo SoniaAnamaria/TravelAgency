@@ -47,6 +47,7 @@ else{
         $queries = array();
         parse_str($_SERVER['QUERY_STRING'], $queries);
         $agencyname = $queries["name"];
+        $_SESSION["agency_name"] = $agencyname;
         $sql = "SELECT * FROM offers WHERE agency='$agencyname'";
         $result = mysqli_query($conn,$sql);
         if(mysqli_num_rows($result) > 0){

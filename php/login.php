@@ -29,6 +29,7 @@ if(isset($_POST["login"])){
         $row = mysqli_fetch_assoc($check_username);
         $_SESSION["user_role"] = $role;
         if($role == 'client'){
+            $_SESSION["username"] = $username;
             header("Location: clientmenu.php");
         }
         else{

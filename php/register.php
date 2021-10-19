@@ -39,6 +39,7 @@ if(isset($_POST["signup"])){
         if($result){
             $_SESSION["user_role"] = $role;
             if($role == 'client'){
+                $_SESSION["username"] = $username;
                 header("Location: clientmenu.php");
             }
             else{
