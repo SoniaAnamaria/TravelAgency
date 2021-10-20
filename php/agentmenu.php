@@ -33,6 +33,9 @@ else{
             <td><button onclick="document.location='deleteoffer.php'">Delete offer</button></td>
         </tr>
         <tr>
+            <td><button onclick="document.location='agentbookinglist.php'">Booking list</button> </td>
+        </tr>
+        <tr>
             <td><button onclick="document.location='logout.php'">Logout</button> </td>
          </tr>
     </table>

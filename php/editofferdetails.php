@@ -35,6 +35,7 @@ else{
   <a href="addoffer.php">Add offer</a>
   <a href="editoffer.php">Edit offer</a>
   <a href="deleteoffer.php">Delete offer</a>
+  <a href="agentbookinglist.php">Booking list</a>
   <a href="logout.php">Logout</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
