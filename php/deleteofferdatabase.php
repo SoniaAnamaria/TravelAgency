@@ -27,12 +27,12 @@ if(isset($_POST["delete"])){
     if($result){
         echo "<script>
         alert('Deleting offer succeeded.');
-        document.location='deleteoffer.php';
+        document.location='agentofferlist.php';
         </script>";
     }else{
         echo "<script>
         alert('Deleting offer failed.');
-        document.location='deleteoffer.php';
+        document.location='agentofferlist.php';
         </script>";
     }
 }

@@ -35,12 +35,12 @@ if(isset($_POST["edit"])){
     if($result){
         echo "<script>
         alert('Editing offer succeeded.');
-        document.location='editoffer.php';
+        document.location='agentofferlist.php';
         </script>";
     }else{
         echo "<script>
         alert('Editing offer failed.');
-        document.location='editoffer.php';
+        document.location='agentofferlist.php';
         </script>";
     }
 }

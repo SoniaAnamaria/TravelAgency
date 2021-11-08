@@ -26,14 +26,13 @@ else{
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/editoffer.css">
+    <link rel="stylesheet" href="../css/agentofferlist.css">
 </head>
 
 <body>
 
 <div class="topnav" id="myTopnav">
   <a href="addoffer.php">Add offer</a>
-  <a href="editoffer.php">Edit offer</a>
   <a href="agentbookinglist.php">Booking list</a>
   <a href="logout.php">Logout</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -43,22 +42,27 @@ else{
 
 <div class="center">
 <input type="text" id="myInput" onkeyup="search()" placeholder="Search for offer">
-<ul id="myUL">
+<table id="myTable">
     <?php
         $agencyname = $_SESSION["agency_name"];
         $sql = "SELECT * FROM offers WHERE agency='$agencyname'";
         $result = mysqli_query($conn,$sql);
         if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result))
+            while($row = mysqli_fetch_assoc($result)){
                 echo "
-                    <li><a href='deleteofferdetails.php?name=".$row['name']."'>".$row['name']."</a></li>
+                <tr>
+                    <td><a href='#'>".$row['name']."</a></td>
+                    <td><a href='editofferdetails.php?name=".$row['name']."'>Edit</a></td>
+                    <td><a href='deleteofferdetails.php?name=".$row['name']."'>Delete</a></td>
+                </tr>
                 ";
-        }
+            }
+        } 
     ?>
-</ul>
+</table>
 </div>
 
-<script src="../js/editoffer.js"></script>
+<script src="../js/agentofferlist.js"></script>
 
 </body>
 </html>
